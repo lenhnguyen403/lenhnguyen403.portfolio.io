@@ -45,39 +45,22 @@ lenhnguyen403.portfolio.io/
 ├── src/
 │   ├── assets/style
 │   ├── components/
-│   │   ├── common
-│   │   │   ├── BlogCard.jsx
-│   │   │   ├── Button.jsx
-│   │   │   ├── Modal.jsx
-│   │   │   ├── SkillCard.jsx
-│   │   │   └── Typing.jsx
-│   │   └── layout
-│   │       ├── Footer.jsx
-│   │       ├── Navbar.jsx
-│   │       ├── ScrollNavbar.jsx
-│   │       └── Sidebar.jsx
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Skills.jsx
+│   │   └── Work.jsx
 │   ├── constants/
 │   ├── context/
 │   │   └── ThemeContext.jsx
-│   ├── pages/
-│   │   ├── About.jsx
-│   │   ├── Blog.jsx
-│   │   ├── Certificates.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Education.jsx
-│   │   ├── Experience.jsx
-│   │   ├── Hero.jsx
-│   │   ├── Home.jsx
-│   │   ├── Projects.jsx
-│   │   └── Skill.jsx
 │   ├── providers/
 │   │   └── ThemeProvider.jsx
-│   ├── utils/
-│   │   └── handleToTopUtil.js
 │   ├── App.css
-│   ├── App.js
-│   └── index.js
-├── .gitignore
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
 └── package.json
 ```
 
