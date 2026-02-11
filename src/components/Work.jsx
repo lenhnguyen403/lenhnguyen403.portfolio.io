@@ -3,7 +3,7 @@ import { FaGithub, FaExternalLinkAlt, FaAws } from "react-icons/fa";
 import {
     SiSpring, SiPostgresql, SiApachekafka, SiDocker, SiElasticsearch,
     SiRedis, SiNextdotjs, SiSocketdotio, SiKubernetes,
-    SiAwslambda, SiReact
+    SiAwslambda, SiReact, SiMysql
 } from "react-icons/si";
 import { TbApi, TbCreditCard } from "react-icons/tb";
 import { BsStars, BsDatabase } from "react-icons/bs";
@@ -48,37 +48,21 @@ const projectIcons = {
 
 /* ===== Data ===== */
 const projects = [
+    // {
+    //     title: "E-Learning Platform",
+    //     description:
+    //         "Full-featured online learning platform with payment & realtime features.",
+    //     tags: ["Spring Boot", "Next.js", "PostgreSQL", "Redis", "WebSocket", "AWS"],
+    //     github: "https://github.com/lekhanhduc",
+    //     demo: "https://javabuilder.online",
+    // },
     {
-        title: "Serverless Blog Platform",
+        title: "",
         description:
-            "Modern serverless blog platform on AWS with microservices architecture.",
-        tags: ["AWS Lambda", "API Gateway", "S3", "CloudFront", "DynamoDB", "SNS", "Cognito", "React"],
-        github: "https://github.com/lekhanhduc/serverless-blog-platform",
-        demo: "https://blog.javabuilder.online",
-    },
-    {
-        title: "E-Learning Platform",
-        description:
-            "Full-featured online learning platform with payment & realtime features.",
-        tags: ["Spring Boot", "Next.js", "PostgreSQL", "Redis", "WebSocket", "AWS"],
-        github: "https://github.com/lekhanhduc",
-        demo: "https://javabuilder.online",
-    },
-    {
-        title: "Rental Platform & Roommate Finder",
-        description:
-            "Large-scale microservices system with AI chatbot & recommendation engine.",
-        tags: ["Spring Boot", "Next.js", "Kafka", "Elasticsearch", "AI", "GKE"],
-        github: "https://github.com/lekhanhduc/rental-platform",
-        demo: "https://rmms.vercel.app",
-    },
-    {
-        title: "FPT-EXAM System",
-        description:
-            "Online examination system with auto grading & analytics.",
-        tags: ["Spring Boot", "Next.js", "PostgreSQL", "Redis", "WebSocket", "AWS"],
-        github: "https://github.com/lekhanhduc/fpt-exam-sync-backend",
-        demo: "https://www.khaothifudn.org",
+            "",
+        tags: ["Spring Boot", "React", "MySQL"],
+        github: "",
+        demo: "",
     },
 ];
 
@@ -90,6 +74,7 @@ const Work = () => {
         "Spring Boot": { icon: <SiSpring />, color: "text-green-500" },
         "Next.js": { icon: <SiNextdotjs />, color: theme === "dark" ? "text-white" : "text-gray-800" },
         "PostgreSQL": { icon: <SiPostgresql />, color: "text-blue-400" },
+        "MySQL": { icon: <SiMysql />, color: 'text-orange-500' },
         "Kafka": { icon: <SiApachekafka />, color: theme === "dark" ? "text-gray-300" : "text-gray-700" },
         "Docker": { icon: <SiDocker />, color: "text-sky-400" },
         "gRPC": { icon: <TbApi />, color: "text-teal-400" },
@@ -129,7 +114,7 @@ const Work = () => {
                     className="text-center mb-12"
                 >
                     <p className="text-secondary text-xs uppercase tracking-widest mb-2">MY WORK</p>
-                    <h2 className={`text-3xl lg:text-4xl font-bold ${titleClass}`}>Projects.</h2>
+                    <h2 className={`text-3xl lg:text-4xl font-bold ${titleClass}`}>Projects</h2>
                 </motion.div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -197,7 +182,7 @@ const Work = () => {
                     className="mt-10 text-center"
                 >
                     <a
-                        href="https://github.com/lekhanhduc"
+                        href="https://github.com/lenhnguyen403"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary rounded-lg text-sm font-medium hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20"

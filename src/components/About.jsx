@@ -9,16 +9,14 @@ import {
 import { useTheme } from "../context/ThemeContext";
 
 const personalInfo = {
-    university: "FPT University Da Nang",
+    university: "Hanoi University of Industry (HaUI)",
     quote: "Code is like humor. When you have to explain it, it’s bad.",
     openTo: "Backend / Microservices / Cloud Projects",
 };
 
 const currentlyLearning = [
-    "System Design & Distributed Systems",
-    "AWS Cloud Architecture",
-    "Performance Optimization",
-    "Scalable Microservices",
+    "Pending...",
+    "Updating...",
 ];
 
 const About = () => {
@@ -41,7 +39,7 @@ const About = () => {
                         Introduction
                     </p>
                     <h2 className={`text-3xl lg:text-4xl font-bold mt-2 ${titleClass}`}>
-                        Overview.
+                        Overview
                     </h2>
                 </motion.div>
 
@@ -70,26 +68,26 @@ const About = () => {
                             </span>{" "}
                             graduated from{" "}
                             <span className="text-primary font-medium">
-                                FPT University Da Nang
+                                Hanoi University of Industry
                             </span>{" "}
-                            with GPA 3.1.
+                            with GPA 3.35
                         </p>
 
                         <p>
                             Experienced with{" "}
                             <span className={highlightClass}>
-                                Spring Boot, Microservices, Cloud
+                                Java, Spring Boot, Microservices
                             </span>
                             , building production-ready systems serving real users.
                         </p>
 
-                        <p>
+                        {/* <p>
                             Strong interest in{" "}
                             <span className={highlightClass}>
                                 System Design, Distributed Systems, AWS
                             </span>
                             . Clean code & scalability first.
-                        </p>
+                        </p> */}
                     </div>
                 </motion.div>
 
@@ -103,7 +101,7 @@ const About = () => {
                         delay={0.2}
                     >
                         <p>{personalInfo.university}</p>
-                        <p className="text-sm mt-2">GPA: 3.1</p>
+                        <p className="text-sm mt-2">GPA: 3.35</p>
                     </Card>
 
                     {/* What I Do */}

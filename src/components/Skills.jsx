@@ -133,7 +133,7 @@ const Skills = () => {
                 >
 
                     <p className="text-secondary text-base uppercase tracking-wider">What I know</p>
-                    <h2 className={`text-3xl lg:text-4xl font-bold mt-2 ${titleClass}`}>Tech Stack.</h2>
+                    <h2 className={`text-3xl lg:text-4xl font-bold mt-2 ${titleClass}`}>Tech Stack</h2>
                 </motion.div>
 
                 <div className="mb-12">

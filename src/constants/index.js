@@ -1,3 +1,4 @@
+// MENU 
 export const navLinks = [
     { id: "about", title: "About" },
     { id: "skills", title: "Skills" },
@@ -5,6 +6,7 @@ export const navLinks = [
     { id: "contact", title: "Contact" },
 ];
 
+// PERSONAL INFOMATION
 export const personalInfo = {
     name: "Le Lenh Nguyen",
     role: "Java Developer",
@@ -14,6 +16,7 @@ export const personalInfo = {
     openTo: "Backend Developer",
 };
 
+// SOCIALS 
 export const socials = [
     { name: "Facebook", url: "https://www.facebook.com/nguyen.lenhnguyen.403", icon: "facebook" },
     { name: "Twitter", url: "https://x.com/diayti311", icon: "twitter" },
@@ -23,40 +26,45 @@ export const socials = [
     { name: "GitHub", url: "https://github.com/lenhnguyen403", icon: "github" },
 ];
 
+// TECHNICAL SKILLS
 export const skills = {
     backend: [
         { name: "Java", icon: "java" },
         { name: "Spring Boot", icon: "spring" },
         { name: "Hibernate", icon: "hibernate" },
+        { name: "NodeJS", icon: "nodejs" },
+        { name: "ExpressJS", icon: "express" },
     ],
     database: [
-        { name: "PostgreSQL", icon: "postgresql" },
         { name: "MySQL", icon: "mysql" },
+        { name: "MongoDB", icon: "mongodb" },
         { name: "SQL Server", icon: "sqlserver" },
-        { name: "Redis", icon: "redis" },
-        { name: "Elasticsearch", icon: "elasticsearch" },
+        // { name: "PostgreSQL", icon: "postgresql" },
+        // { name: "Redis", icon: "redis" },
+        // { name: "Elasticsearch", icon: "elasticsearch" },
     ],
     devops: [
         { name: "Docker", icon: "docker" },
-        { name: "Jenkins", icon: "jenkins" },
-        { name: "Kafka", icon: "kafka" },
-        { name: "Prometheus", icon: "prometheus" },
-        { name: "Grafana", icon: "grafana" },
+        // { name: "Jenkins", icon: "jenkins" },
+        // { name: "Kafka", icon: "kafka" },
+        // { name: "Prometheus", icon: "prometheus" },
+        // { name: "Grafana", icon: "grafana" },
     ],
     frontend: [
         { name: "React", icon: "react" },
-        { name: "Angular", icon: "angular" },
         { name: "MUI", icon: "mui" },
         { name: "Bootstrap", icon: "bootstrap" },
+        // { name: "Angular", icon: "angular" },
     ],
     tools: [
         { name: "Git", icon: "git" },
         { name: "Postman", icon: "postman" },
         { name: "Swagger", icon: "swagger" },
-        { name: "SonarQube", icon: "sonarqube" },
+        // { name: "SonarQube", icon: "sonarqube" },
     ],
 };
 
+// CURRENTLY LEARNING
 export const currentlyLearning = [
     "System Design",
     "AWS Cloud Architecture",

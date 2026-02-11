@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import {
     FaEnvelope,
     FaMapMarkerAlt,
@@ -17,9 +17,10 @@ const Toast = ({ message, type, onClose }) => {
             initial={{ opacity: 0, y: -50, x: "-50%" }}
             animate={{ opacity: 1, y: 0, x: "-50%" }}
             exit={{ opacity: 0, y: -50, x: "-50%" }}
-            className={`fixed top-24 left-1/2 z-50 px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 ${type === "success"
-                ? "bg-green-500/90 text-white"
-                : "bg-red-500/90 text-white"
+            className={`fixed top-24 left-1/2 z-50 px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 
+                ${type === "success"
+                    ? "bg-green-500/90 text-white"
+                    : "bg-red-500/90 text-white"
                 }`}
         >
             {type === "success" ? (
@@ -58,34 +59,36 @@ const Contact = () => {
     const titleClass = theme === "dark" ? "text-white" : "text-slate-800";
     const labelClass = theme === "dark" ? "text-white-100" : "text-slate-700";
     const inputBgClass = theme === "dark" ? "bg-tertiary/30" : "bg-white";
-    const inputTextClass =
-        theme === "dark" ? "text-white-100" : "text-slate-800";
+    const inputTextClass = theme === "dark" ? "text-white-100" : "text-slate-800";
 
     const showToast = (message, type) => {
         setToast({ show: true, message, type });
-        setTimeout(
-            () => setToast({ show: false, message: "", type: "success" }),
-            5000
-        );
+
+        setTimeout(() =>
+            setToast({ show: false, message: "", type: "success" }),
+            5000);
     };
 
     const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
 
-        const serviceId = "service_2tyggw9";
-        const templateId = "template_rp4axkc";
-        const publicKey = "zaxJqvfEmlAbFArdF";
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
         const templateParams = {
             name: form.name,
             email: form.email,
             message: form.message,
-            to_name: "Le Khanh Duc",
+            to_name: "Le Lenh Nguyen",
         };
 
         emailjs
@@ -133,7 +136,7 @@ const Contact = () => {
                         GET IN TOUCH
                     </p>
                     <h2 className={`text-3xl lg:text-4xl font-bold ${titleClass}`}>
-                        Contact.
+                        Contact
                     </h2>
                 </motion.div>
 

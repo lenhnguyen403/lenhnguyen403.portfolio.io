@@ -94,7 +94,7 @@ const Hero = () => {
     const socialIcons = {
         facebook: { icon: <FaFacebook />, color: "text-blue-500" },
         twitter: { icon: <FaTwitter />, color: "text-blue-500" },
-        linkedin: { icon: <FaLinkedin />, color: theme === "dark" ? "text-white" : "text-blue-500", },
+        linkedin: { icon: <FaLinkedin />, color: "text-blue-500", },
         youtube: { icon: <FaYoutube />, color: "text-red-500" },
         github: { icon: <FaGithub />, color: theme === "dark" ? "text-white" : "text-gray-800", },
         email: { icon: <FaEnvelope />, color: "text-yellow-400" },
