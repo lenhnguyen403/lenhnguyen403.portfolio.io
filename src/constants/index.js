@@ -9,7 +9,7 @@ export const navLinks = [
 // PERSONAL INFOMATION
 export const personalInfo = {
     name: "Le Lenh Nguyen",
-    roles: ["Backend Developer", "Java Spring Boot Developer"],
+    roles: ["Backend Developer", "Java Developer"],
     university: "Hanoi University of Industry (HaUI)",
     gpa: 3.35,
     description: "Backend-focused engineer passionate about scalable, reliable, and secure systems. Strong expertise in Java, Spring Boot, and RESTful API development.",

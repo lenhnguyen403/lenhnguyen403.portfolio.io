@@ -5,15 +5,15 @@ import {
     SiVite, SiBootstrap, SiMui, SiTailwindcss,
     SiDocker, SiJenkins, SiApachekafka, SiPrometheus, SiGrafana,
     SiReact, SiGit, SiGithub, SiPostman, SiVercel,
-    SiSwagger, SiSonarqube, SiJsonwebtokens, SiSocketdotio,
+    SiSwagger, SiSonarqube, SiJsonwebtokens, SiSocketdotio, SiClerk,
     SiAmazonec2, SiAwselasticloadbalancing, SiAwslambda,
     SiAmazons3, SiAmazoniam, SiExpress, SiKubernetes,
-    SiCloudinary, SiJhipster, SiGitlab
+    SiCloudinary, SiJhipster, SiGitlab, SiKeycloak
 } from "react-icons/si";
 import { DiMsqlServer } from "react-icons/di";
 import { FaNodeJs } from "react-icons/fa6";
 import {
-    FaJava, FaAws, FaShieldAlt, FaKey,
+    FaJava, FaAws, FaShieldAlt,
     FaCloud, FaDatabase, FaRobot, FaCode, FaAngular
 } from "react-icons/fa";
 
@@ -76,13 +76,14 @@ const Skills = () => {
         //         },
         //     ],
         // },
-        // {
-        //     title: "Authentication & Authorization",
-        //     color: "from-blue-400 to-indigo-500",
-        //     skills: [
-        //         { name: "Keycloak", icon: <FaKey />, iconColor: "text-blue-400" },
-        //     ],
-        // },
+        {
+            title: "Authentication & Authorization",
+            color: "from-blue-400 to-indigo-500",
+            skills: [
+                { name: "Keycloak", icon: <SiKeycloak />, iconColor: "text-blue-700" },
+                { name: "Clerk", icon: <SiClerk />, iconColor: "text-purple-700" },
+            ],
+        },
         {
             title: "Database",
             color: "from-blue-500 to-cyan-500",

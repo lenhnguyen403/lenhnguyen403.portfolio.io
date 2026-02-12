@@ -12,7 +12,7 @@ import {
     SiReact, SiTailwindcss, SiBootstrap, SiMui, SiVite,
     SiAwslambda,
     SiExpress, SiCloudinary, SiVercel, SiKubernetes,
-    SiJhipster, SiJsonwebtokens
+    SiJhipster, SiJsonwebtokens, SiClerk, SiKeycloak
 } from "react-icons/si";
 import { DiMsqlServer } from "react-icons/di";
 import { FaJava, FaAws } from "react-icons/fa";
@@ -118,6 +118,8 @@ const SkillsSphere = () => {
             { name: "Bootstrap", icon: <SiBootstrap color="#6f2cf5" /> },
             { name: "MySQL", icon: <SiMysql color={`${theme === 'dark' ? '#f29111' : '#00758f'}`} /> },
             // { name: "SQL Server", icon: <DiMsqlServer color="red" /> },
+            { name: "KeyCloak", icon: <SiKeycloak color="#1d63ed" /> },
+            { name: "Clerk", icon: <SiClerk color="#1d63ed" /> },
             { name: "Docker", icon: <SiDocker color="#1d63ed" /> },
             // { name: "Kubernetes", icon: <SiKubernetes color="#1d63ed" /> },
             { name: "Vercel", icon: <SiVercel color={`${theme === 'dark' ? 'white' : 'black'}`} /> },
