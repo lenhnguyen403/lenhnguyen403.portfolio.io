@@ -1,120 +1,145 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import {
-    SiSpring, SiPostgresql, SiMysql, SiRedis, SiElasticsearch,
+    SiSpring, SiSpringboot,
+    SiPostgresql, SiMysql, SiRedis, SiElasticsearch, SiMongodb,
+    SiVite, SiBootstrap, SiMui, SiTailwindcss,
     SiDocker, SiJenkins, SiApachekafka, SiPrometheus, SiGrafana,
-    SiReact, SiNextdotjs, SiGit, SiPostman,
+    SiReact, SiGit, SiGithub, SiPostman, SiVercel,
     SiSwagger, SiSonarqube, SiJsonwebtokens, SiSocketdotio,
     SiAmazonec2, SiAwselasticloadbalancing, SiAwslambda,
-    SiAmazons3, SiAmazoniam, SiSharp, SiDotnet
+    SiAmazons3, SiAmazoniam, SiExpress, SiKubernetes,
+    SiCloudinary, SiJhipster, SiGitlab
 } from "react-icons/si";
+import { DiMsqlServer } from "react-icons/di";
+import { FaNodeJs } from "react-icons/fa6";
 import {
     FaJava, FaAws, FaShieldAlt, FaKey,
-    FaCloud, FaDatabase, FaRobot, FaCode
+    FaCloud, FaDatabase, FaRobot, FaCode, FaAngular
 } from "react-icons/fa";
 
 import { useTheme } from "../context/ThemeContext";
 import SkillsSphere from "./canvas/SkillsSphere";
+import HeadingSection from "./common/HeadingSection";
 
 const Skills = () => {
     const { theme } = useTheme();
 
+    /* ===== Skills Categories Data ===== */
     const skillCategories = [
         {
             title: "Backend (Java)",
             color: "from-orange-500 to-red-500",
             skills: [
                 { name: "Java", icon: <FaJava />, iconColor: "text-orange-500" },
-                { name: "Spring Boot", icon: <SiSpring />, iconColor: "text-green-500" },
+                { name: "Spring", icon: <SiSpring />, iconColor: "text-green-500" },
+                { name: "Spring Boot", icon: <SiSpringboot />, iconColor: "text-green-500" },
                 { name: "Spring Data JPA", icon: <FaDatabase />, iconColor: "text-green-500" },
-                { name: "Spring Security", icon: <FaShieldAlt />, iconColor: "text-green-500" },
-                { name: "Spring Cloud", icon: <FaCloud />, iconColor: "text-green-500" },
-                { name: "Spring AI", icon: <FaRobot />, iconColor: "text-green-500" },
-                {
-                    name: "WebSocket",
-                    icon: <SiSocketdotio />,
-                    iconColor: theme === "dark" ? "text-gray-300" : "text-gray-700",
-                },
-                { name: "JWT", icon: <SiJsonwebtokens />, iconColor: "text-pink-500" },
+                // { name: "Spring Security", icon: <FaShieldAlt />, iconColor: "text-green-500" },
+                // { name: "Spring Cloud", icon: <FaCloud />, iconColor: "text-green-500" },
+                // { name: "JWT", icon: <SiJsonwebtokens />, iconColor: "text-pink-500" },
+                // { name: "Spring AI", icon: <FaRobot />, iconColor: "text-green-500" },
+                // {
+                //     name: "WebSocket",
+                //     icon: <SiSocketdotio />,
+                //     iconColor: theme === "dark" ? "text-gray-300" : "text-gray-700",
+                // },
             ],
         },
-        {
-            title: "Message Broker",
-            color: "from-gray-500 to-slate-600",
-            skills: [
-                {
-                    name: "Kafka",
-                    icon: <SiApachekafka />,
-                    iconColor: theme === "dark" ? "text-gray-300" : "text-gray-700",
-                },
-            ],
-        },
-        {
-            title: "Authentication & Authorization",
-            color: "from-blue-400 to-indigo-500",
-            skills: [
-                { name: "Keycloak", icon: <FaKey />, iconColor: "text-blue-400" },
-            ],
-        },
-        {
-            title: "Database",
-            color: "from-blue-500 to-cyan-500",
-            skills: [
-                { name: "PostgreSQL", icon: <SiPostgresql />, iconColor: "text-blue-400" },
-                { name: "MySQL", icon: <SiMysql />, iconColor: "text-orange-400" },
-                { name: "Redis", icon: <SiRedis />, iconColor: "text-red-500" },
-                { name: "Elasticsearch", icon: <SiElasticsearch />, iconColor: "text-yellow-400" },
-            ],
-        },
-        {
-            title: "Cloud (AWS)",
-            color: "from-orange-400 to-yellow-500",
-            skills: [
-                { name: "IAM", icon: <SiAmazoniam />, iconColor: "text-orange-400" },
-                { name: "EC2", icon: <SiAmazonec2 />, iconColor: "text-orange-400" },
-                { name: "S3", icon: <SiAmazons3 />, iconColor: "text-green-500" },
-                { name: "CloudFront", icon: <FaAws />, iconColor: "text-purple-400" },
-                { name: "Lambda", icon: <SiAwslambda />, iconColor: "text-orange-500" },
-                { name: "API Gateway", icon: <FaAws />, iconColor: "text-purple-500" },
-                { name: "Cognito", icon: <FaAws />, iconColor: "text-red-400" },
-                { name: "SNS", icon: <FaAws />, iconColor: "text-pink-500" },
-                { name: "SES", icon: <FaAws />, iconColor: "text-blue-400" },
-                { name: "Elastic Beanstalk", icon: <SiAwselasticloadbalancing />, iconColor: "text-orange-400" },
-                { name: "CodeCommit", icon: <FaAws />, iconColor: "text-blue-500" },
-                { name: "CodeBuild", icon: <FaAws />, iconColor: "text-green-400" },
-                { name: "CodeDeploy", icon: <FaAws />, iconColor: "text-blue-400" },
-                { name: "CodePipeline", icon: <FaAws />, iconColor: "text-teal-400" },
-            ],
-        },
-        {
-            title: "DevOps",
-            color: "from-green-500 to-emerald-500",
-            skills: [
-                { name: "Docker", icon: <SiDocker />, iconColor: "text-sky-400" },
-                { name: "Jenkins", icon: <SiJenkins />, iconColor: "text-red-400" },
-                { name: "Prometheus", icon: <SiPrometheus />, iconColor: "text-orange-500" },
-                { name: "Grafana", icon: <SiGrafana />, iconColor: "text-orange-400" },
-            ],
-        },
+        // {
+        //     title: "Backend (NodeJS)",
+        //     color: "from-orange-500 to-red-500",
+        //     skills: [
+        //         { name: "Node.js", icon: <FaNodeJs />, iconColor: "text-green-600" },
+        //         { name: "ExpressJS", icon: <SiExpress />, iconColor: "text-white-500" },
+        //     ],
+        // },
         {
             title: "Frontend",
             color: "from-purple-500 to-pink-500",
             skills: [
                 { name: "React", icon: <SiReact />, iconColor: "text-cyan-400" },
-                {
-                    name: "Next.js",
-                    icon: <SiNextdotjs />,
-                    iconColor: theme === "dark" ? "text-white" : "text-gray-800",
-                },
+                // { name: "Angular", icon: <FaAngular />, iconColor: "text-red-600" },
+                { name: "Vite", icon: <SiVite />, iconColor: "text-yellow-400" },
+                { name: "Tailwindcss", icon: <SiTailwindcss />, iconColor: "text-cyan-500" },
+                // { name: "Material UI", icon: <SiMui />, iconColor: "text-blue-600" },
+                { name: "Bootstrap", icon: <SiBootstrap />, iconColor: "text-purple-600" },
             ],
         },
+        // {
+        //     title: "Message Broker",
+        //     color: "from-gray-500 to-slate-600",
+        //     skills: [
+        //         {
+        //             name: "Kafka",
+        //             icon: <SiApachekafka />,
+        //             iconColor: theme === "dark" ? "text-gray-300" : "text-gray-700",
+        //         },
+        //     ],
+        // },
+        // {
+        //     title: "Authentication & Authorization",
+        //     color: "from-blue-400 to-indigo-500",
+        //     skills: [
+        //         { name: "Keycloak", icon: <FaKey />, iconColor: "text-blue-400" },
+        //     ],
+        // },
+        {
+            title: "Database",
+            color: "from-blue-500 to-cyan-500",
+            skills: [
+                { name: "MySQL", icon: <SiMysql />, iconColor: "text-orange-400" },
+                { name: "MongoDB", icon: <SiMongodb />, iconColor: "text-green-500" },
+                // { name: "PostgreSQL", icon: <SiPostgresql />, iconColor: "text-blue-400" },
+                // { name: "SQL Server", icon: <DiMsqlServer />, iconColor: "text-red-500" },
+                // { name: "Redis", icon: <SiRedis />, iconColor: "text-red-500" },
+                // { name: "Elasticsearch", icon: <SiElasticsearch />, iconColor: "text-yellow-400" },
+            ],
+        },
+        // {
+        //     title: "Cloud (AWS)",
+        //     color: "from-orange-400 to-yellow-500",
+        //     skills: [
+        //         { name: "IAM", icon: <SiAmazoniam />, iconColor: "text-orange-400" },
+        //         { name: "EC2", icon: <SiAmazonec2 />, iconColor: "text-orange-400" },
+        //         { name: "S3", icon: <SiAmazons3 />, iconColor: "text-green-500" },
+        //         { name: "CloudFront", icon: <FaAws />, iconColor: "text-purple-400" },
+        //         { name: "Lambda", icon: <SiAwslambda />, iconColor: "text-orange-500" },
+        //         { name: "API Gateway", icon: <FaAws />, iconColor: "text-purple-500" },
+        //         { name: "Cognito", icon: <FaAws />, iconColor: "text-red-400" },
+        //         { name: "SNS", icon: <FaAws />, iconColor: "text-pink-500" },
+        //         { name: "SES", icon: <FaAws />, iconColor: "text-blue-400" },
+        //         { name: "Elastic Beanstalk", icon: <SiAwselasticloadbalancing />, iconColor: "text-orange-400" },
+        //         { name: "CodeCommit", icon: <FaAws />, iconColor: "text-blue-500" },
+        //         { name: "CodeBuild", icon: <FaAws />, iconColor: "text-green-400" },
+        //         { name: "CodeDeploy", icon: <FaAws />, iconColor: "text-blue-400" },
+        //         { name: "CodePipeline", icon: <FaAws />, iconColor: "text-teal-400" },
+        //     ],
+        // },
+        {
+            title: "DevOps",
+            color: "from-green-500 to-emerald-500",
+            skills: [
+                { name: "Docker", icon: <SiDocker />, iconColor: "text-blue-500" },
+                { name: "Vercel", icon: <SiVercel />, iconColor: "text-black-500" },
+                // { name: "Kubernetes", icon: <SiKubernetes />, iconColor: "text-blue-500" },
+                // { name: "Jenkins", icon: <SiJenkins />, iconColor: "text-red-400" },
+                // { name: "Prometheus", icon: <SiPrometheus />, iconColor: "text-orange-500" },
+                // { name: "Grafana", icon: <SiGrafana />, iconColor: "text-orange-400" },
+            ],
+        },
+
         {
             title: "Tools",
             color: "from-yellow-500 to-orange-500",
             skills: [
                 { name: "Git", icon: <SiGit />, iconColor: "text-orange-500" },
+                // { name: "GitHub", icon: <SiGithub />, iconColor: theme === 'dark' ? 'text-white' : 'text-black' },
+                // { name: "GitLab", icon: <SiGitlab />, iconColor: "text-orange-500" },
                 { name: "Postman", icon: <SiPostman />, iconColor: "text-orange-500" },
                 { name: "Swagger", icon: <SiSwagger />, iconColor: "text-green-500" },
-                { name: "SonarQube", icon: <SiSonarqube />, iconColor: "text-sky-400" },
+                { name: "Cloudinary", icon: <SiCloudinary />, iconColor: "text-blue-500" },
+                // { name: "JHipster", icon: <SiJhipster />, iconColor: "text-blue-500" },
+                // { name: "SonarQube", icon: <SiSonarqube />, iconColor: "text-sky-400" },
             ],
         },
     ];
@@ -131,9 +156,12 @@ const Skills = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-
-                    <p className="text-secondary text-base uppercase tracking-wider">What I know</p>
-                    <h2 className={`text-3xl lg:text-4xl font-bold mt-2 ${titleClass}`}>Tech Stack</h2>
+                    <HeadingSection
+                        classNameP={'text-secondary text-base uppercase tracking-wider'}
+                        classNameH2={`text-3xl lg:text-4xl font-bold mt-2 ${titleClass}`}
+                        children1={'What I Know'}
+                        children2={'Tech Stack'}
+                    />
                 </motion.div>
 
                 <div className="mb-12">

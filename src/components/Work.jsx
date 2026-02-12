@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { FaGithub, FaExternalLinkAlt, FaAws } from "react-icons/fa";
 import {
     SiSpring, SiPostgresql, SiApachekafka, SiDocker, SiElasticsearch,
@@ -8,6 +8,8 @@ import {
 import { TbApi, TbCreditCard } from "react-icons/tb";
 import { BsStars, BsDatabase } from "react-icons/bs";
 import { useTheme } from "../context/ThemeContext";
+import { projects } from "../data";
+import HeadingSection from "./common/HeadingSection";
 
 /* ===== Custom SVG Icons ===== */
 const ServerlessIcon = () => (
@@ -45,26 +47,6 @@ const projectIcons = {
     "Rental Platform & Roommate Finder": <RentalIcon />,
     "FPT-EXAM System": <ExamIcon />,
 };
-
-/* ===== Data ===== */
-const projects = [
-    // {
-    //     title: "E-Learning Platform",
-    //     description:
-    //         "Full-featured online learning platform with payment & realtime features.",
-    //     tags: ["Spring Boot", "Next.js", "PostgreSQL", "Redis", "WebSocket", "AWS"],
-    //     github: "https://github.com/lekhanhduc",
-    //     demo: "https://javabuilder.online",
-    // },
-    {
-        title: "",
-        description:
-            "",
-        tags: ["Spring Boot", "React", "MySQL"],
-        github: "",
-        demo: "",
-    },
-];
 
 const Work = () => {
     const { theme } = useTheme();
@@ -113,8 +95,12 @@ const Work = () => {
                     viewport={{ once: true }}
                     className="text-center mb-12"
                 >
-                    <p className="text-secondary text-xs uppercase tracking-widest mb-2">MY WORK</p>
-                    <h2 className={`text-3xl lg:text-4xl font-bold ${titleClass}`}>Projects</h2>
+                    <HeadingSection
+                        classNameP={'text-secondary text-xs uppercase tracking-widest mb-2'}
+                        classNameH2={`text-3xl lg:text-4xl font-bold ${titleClass}`}
+                        children1={'My Work'}
+                        children2={'Projects'}
+                    />
                 </motion.div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -126,9 +112,11 @@ const Work = () => {
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                             viewport={{ once: true }}
                             whileHover={{ y: -5 }}
-                            className="card-gradient rounded-xl border border-primary/10 overflow-hidden group hover:border-primary/30 transition-all flex flex-col"
+                            className="card-gradient rounded-xl border border-primary/10 overflow-hidden 
+                                        group hover:border-primary/30 transition-all flex flex-col"
                         >
-                            <div className={`h-32 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ${theme === "dark" ? "bg-tertiary/50" : "bg-slate-100"}`}>
+                            <div className={`h-32 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 
+                                    ${theme === "dark" ? "bg-tertiary/50" : "bg-slate-100"}`}>
                                 {projectIcons[project.title] || <span className="text-4xl">{project.image}</span>}
                             </div>
                             <div className="p-5 flex flex-col flex-1">
@@ -163,7 +151,8 @@ const Work = () => {
                                     href={project.demo}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="mt-auto inline-flex items-center gap-2 px-4 py-2 bg-violet-500 rounded-lg text-xs font-medium hover:bg-violet-600 transition-colors w-full justify-center"
+                                    className="mt-auto inline-flex items-center gap-2 px-4 py-2 bg-violet-500 rounded-lg   
+                                                text-xs font-medium hover:bg-violet-600 transition-colors w-full justify-center"
                                     style={{ color: '#ffffff' }}
                                 >
                                     <FaExternalLinkAlt className="text-xs" />
@@ -185,7 +174,8 @@ const Work = () => {
                         href="https://github.com/lenhnguyen403"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary rounded-lg text-sm font-medium hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20"
+                        className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary rounded-lg text-sm 
+                                    font-medium hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20"
                         style={{ color: '#ffffff' }}
                     >
                         <FaGithub />

@@ -1,7 +1,6 @@
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import {
     FaFacebook,
-    FaTiktok,
     FaYoutube,
     FaGithub,
     FaEnvelope,
@@ -13,6 +12,7 @@ import { useTheme } from "../context/ThemeContext";
 import { useRef, useState, useEffect } from "react";
 import HeroBackground from "./canvas/HeroBackground";
 import { useMemo } from "react";
+import HeroCard from "./common/HeroCard";
 
 const Hero = () => {
     const { theme } = useTheme();
@@ -20,12 +20,7 @@ const Hero = () => {
 
     // Typing animation
     const roles = useMemo(
-        () => [
-            "Backend Developer",
-            "Java Spring Boot Developer",
-        ],
-        []
-    );
+        () => personalInfo.roles, []);
 
     const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
     const [displayedText, setDisplayedText] = useState("");
@@ -96,8 +91,8 @@ const Hero = () => {
         twitter: { icon: <FaTwitter />, color: "text-blue-500" },
         linkedin: { icon: <FaLinkedin />, color: "text-blue-500", },
         youtube: { icon: <FaYoutube />, color: "text-red-500" },
-        github: { icon: <FaGithub />, color: theme === "dark" ? "text-white" : "text-gray-800", },
         email: { icon: <FaEnvelope />, color: "text-yellow-400" },
+        github: { icon: <FaGithub />, color: theme === "dark" ? "text-white" : "text-gray-800", },
     };
 
     return (
@@ -148,7 +143,8 @@ const Hero = () => {
                                 initial={{ opacity: 0, y: 20, rotateX: -20 }}
                                 animate={{ opacity: 1, y: 0, rotateX: 0 }}
                                 transition={{ duration: 0.6, delay: 0.7 }}
-                                className="text-xl lg:text-2xl xl:text-3xl text-secondary mt-4 flex items-center gap-2"
+                                className="text-xl lg:text-2xl xl:text-3xl text-secondary mt-4 
+                                            flex items-center justify-center sm:justify-start gap-2"
                             >
                                 <span>{displayedText}</span>
                                 <motion.span
@@ -192,7 +188,8 @@ const Hero = () => {
                                         transition: { duration: 0.2 }
                                     }}
                                     whileTap={{ scale: 0.9 }}
-                                    className="w-12 h-12 rounded-full bg-tertiary flex items-center justify-center text-xl hover:bg-black-200 transition-all duration-300 border border-primary/20"
+                                    className="w-12 h-12 rounded-full bg-tertiary flex items-center justify-center 
+                                                text-xl hover:bg-black-200 transition-all duration-300 border border-primary/20"
                                     style={{ transformStyle: "preserve-3d" }}
                                 >
                                     <span className={socialIcons[social.icon].color}>
@@ -219,7 +216,8 @@ const Hero = () => {
                                     transition: { duration: 0.2 }
                                 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-8 py-3 bg-violet-500 rounded-xl font-medium hover:bg-violet-600 transition-colors text-white"
+                                className="px-8 py-3 bg-violet-500 rounded-xl hover:bg-violet-600 
+                                            transition-colors text-white font-medium"
                                 style={{ color: '#ffffff', transformStyle: "preserve-3d" }}
                             >
                                 Contact Me
@@ -234,7 +232,8 @@ const Hero = () => {
                                     transition: { duration: 0.2 }
                                 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-8 py-3 border-2 border-violet-500 rounded-xl text-violet-500 font-medium hover:bg-violet-500/10 transition-colors"
+                                className="px-8 py-3 border-2 border-violet-500 rounded-xl text-violet-500 
+                                            font-medium hover:bg-violet-500/10 transition-colors"
                                 style={{ transformStyle: "preserve-3d" }}
                             >
                                 View Work
@@ -263,19 +262,22 @@ const Hero = () => {
                         >
                             {/* 3D Ring effects */}
                             <motion.div
-                                className="absolute inset-0 w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full border-2 border-primary/30"
+                                className="absolute inset-0 w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 
+                                            rounded-full border-2 border-primary/30"
                                 style={{ transform: "translateZ(-40px)" }}
                                 animate={{ rotate: 360 }}
                                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                             />
                             <motion.div
-                                className="absolute inset-0 w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full border border-purple-500/20"
+                                className="absolute inset-0 w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 
+                                            rounded-full border border-purple-500/20"
                                 style={{ transform: "translateZ(-60px) scale(1.1)" }}
                                 animate={{ rotate: -360 }}
                                 transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
                             />
                             <motion.div
-                                className="absolute inset-0 w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full border border-cyan-500/10"
+                                className="absolute inset-0 w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 
+                                            rounded-full border border-cyan-500/10"
                                 style={{ transform: "translateZ(-80px) scale(1.2)" }}
                                 animate={{ rotate: 360 }}
                                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
@@ -287,7 +289,8 @@ const Hero = () => {
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                             >
                                 <motion.div
-                                    className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full bg-linear-to-br from-primary/30 to-purple-900/30 flex items-center justify-center p-2"
+                                    className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full bg-linear-to-br 
+                                                from-primary/30 to-purple-900/30 flex items-center justify-center p-2"
                                     style={{
                                         transformStyle: "preserve-3d",
                                         boxShadow: "0 25px 50px -12px rgba(139, 92, 246, 0.25), 0 0 60px rgba(139, 92, 246, 0.1)"
@@ -296,10 +299,8 @@ const Hero = () => {
                                         boxShadow: "0 35px 60px -15px rgba(139, 92, 246, 0.4), 0 0 80px rgba(139, 92, 246, 0.2)"
                                     }}
                                 >
-                                    <img
-                                        src="/avatar.jpg"
-                                        alt="Le Khanh Duc"
-                                        className="w-full h-full rounded-full object-cover border-2 border-primary/20"
+                                    <HeroCard
+                                        className='w-full h-full rounded-full object-cover border-2 border-primary/20'
                                         style={{ transform: "translateZ(20px)" }}
                                     />
                                 </motion.div>
@@ -364,7 +365,9 @@ const Hero = () => {
                     whileHover={{ scale: 1.1 }}
                     style={{ transformStyle: "preserve-3d" }}
                 >
-                    <span className="text-secondary text-xs tracking-wider group-hover:text-primary transition-colors">Scroll Down</span>
+                    <span className="text-secondary text-xs tracking-wider group-hover:text-primary transition-colors">
+                        Scroll Down
+                    </span>
                     <motion.div
                         className="text-secondary group-hover:text-primary transition-colors"
                         whileHover={{ rotateX: 20 }}

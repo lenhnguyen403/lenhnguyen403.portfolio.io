@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
 import emailjs from "@emailjs/browser";
+import HeadingSection from "./common/HeadingSection";
 
 /* Toast notification component */
 const Toast = ({ message, type, onClose }) => {
@@ -132,12 +133,12 @@ const Contact = () => {
                     viewport={{ once: true }}
                     className="text-center mb-12"
                 >
-                    <p className="text-secondary text-xs uppercase tracking-widest mb-2">
-                        GET IN TOUCH
-                    </p>
-                    <h2 className={`text-3xl lg:text-4xl font-bold ${titleClass}`}>
-                        Contact
-                    </h2>
+                    <HeadingSection
+                        classNameP={'text-secondary text-xs uppercase tracking-widest mb-2'}
+                        classNameH2={`text-3xl lg:text-4xl font-bold ${titleClass}`}
+                        children1={'Get In Touch'}
+                        children2={'Contact'}
+                    />
                 </motion.div>
 
                 <div className="grid md:grid-cols-5 gap-6">
@@ -205,7 +206,9 @@ const Contact = () => {
                                 onChange={handleChange}
                                 placeholder="Your name"
                                 required
-                                className={`w-full px-4 py-2.5 ${inputBgClass} rounded-lg border border-primary/10 ${inputTextClass} text-sm`}
+                                className={`w-full px-4 py-2.5 
+                                    ${inputBgClass} rounded-lg border border-primary/10 
+                                    ${inputTextClass} text-sm`}
                             />
                         </div>
 
@@ -220,7 +223,9 @@ const Contact = () => {
                                 onChange={handleChange}
                                 placeholder="Your email"
                                 required
-                                className={`w-full px-4 py-2.5 ${inputBgClass} rounded-lg border border-primary/10 ${inputTextClass} text-sm`}
+                                className={`w-full px-4 py-2.5 
+                                    ${inputBgClass} rounded-lg border border-primary/10 
+                                    ${inputTextClass} text-sm`}
                             />
                         </div>
 
@@ -235,14 +240,17 @@ const Contact = () => {
                                 placeholder="Your message"
                                 required
                                 rows={4}
-                                className={`w-full px-4 py-2.5 ${inputBgClass} rounded-lg border border-primary/10 ${inputTextClass} text-sm resize-none`}
+                                className={`w-full px-4 py-2.5 
+                                    ${inputBgClass} rounded-lg border border-primary/10 
+                                    ${inputTextClass} text-sm resize-none`}
                             />
                         </div>
 
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-2.5 bg-primary rounded-lg text-sm font-medium hover:bg-primary-dark transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                            className="w-full py-2.5 bg-primary rounded-lg text-sm font-medium hover:bg-primary-dark 
+                                        transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                             style={{ color: "#fff" }}
                         >
                             {loading ? (

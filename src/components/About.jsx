@@ -7,17 +7,8 @@ import {
     FaCode,
 } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
-
-const personalInfo = {
-    university: "Hanoi University of Industry (HaUI)",
-    quote: "Code is like humor. When you have to explain it, it’s bad.",
-    openTo: "Backend / Microservices / Cloud Projects",
-};
-
-const currentlyLearning = [
-    "Pending...",
-    "Updating...",
-];
+import HeadingSection from "./common/HeadingSection";
+import { personalInfo, currentlyLearning, responsibilites } from "../constants";
 
 const About = () => {
     const { theme } = useTheme();
@@ -35,12 +26,12 @@ const About = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <p className="text-secondary uppercase tracking-wider">
-                        Introduction
-                    </p>
-                    <h2 className={`text-3xl lg:text-4xl font-bold mt-2 ${titleClass}`}>
-                        Overview
-                    </h2>
+                    <HeadingSection
+                        classNameP={'text-secondary uppercase tracking-wider'}
+                        classNameH2={`text-3xl lg:text-4xl font-bold mt-2 ${titleClass}`}
+                        children1={'Introduction'}
+                        children2={'Overview'}
+                    />
                 </motion.div>
 
                 {/* About Me */}
@@ -68,9 +59,9 @@ const About = () => {
                             </span>{" "}
                             graduated from{" "}
                             <span className="text-primary font-medium">
-                                Hanoi University of Industry
+                                {personalInfo.university}
                             </span>{" "}
-                            with GPA 3.35
+                            with GPA {personalInfo.gpa}
                         </p>
 
                         <p>
@@ -101,7 +92,7 @@ const About = () => {
                         delay={0.2}
                     >
                         <p>{personalInfo.university}</p>
-                        <p className="text-sm mt-2">GPA: 3.35</p>
+                        <p className="text-sm mt-2">GPA: {personalInfo.gpa}</p>
                     </Card>
 
                     {/* What I Do */}
@@ -111,17 +102,16 @@ const About = () => {
                         delay={0.3}
                     >
                         <ul className="space-y-2 text-sm">
-                            <li>• Build RESTful APIs</li>
-                            <li>• Design microservices</li>
-                            <li>• Deploy on AWS/GCP</li>
-                            <li>• Integrate real-time & AI features</li>
+                            {responsibilites.map((item, i) => (
+                                <li key={i}>• {item}</li>
+                            ))}
                         </ul>
                     </Card>
 
                     {/* Learning */}
                     <Card
                         icon={<FaLightbulb />}
-                        title="Currently Improving"
+                        title="Currently Learning"
                         delay={0.4}
                     >
                         <ul className="space-y-2 text-sm">
