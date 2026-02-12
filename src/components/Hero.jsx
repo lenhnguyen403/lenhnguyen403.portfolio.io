@@ -144,7 +144,7 @@ const Hero = () => {
                                 animate={{ opacity: 1, y: 0, rotateX: 0 }}
                                 transition={{ duration: 0.6, delay: 0.7 }}
                                 className="text-xl lg:text-2xl xl:text-3xl text-secondary mt-4 
-                                            flex items-center justify-center sm:justify-start gap-2"
+                                            flex items-center justify-center lg:justify-start gap-2"
                             >
                                 <span>{displayedText}</span>
                                 <motion.span
